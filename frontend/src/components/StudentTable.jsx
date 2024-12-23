@@ -15,7 +15,7 @@ const StudentTable = () => {
     const fetchStudents = async () => {
       try {
         dispatch(setLoading(true));
-        const response = await axios.get('http://localhost:5000/api/supabase-data');
+        const response = await axios.get('https://quyl-xepd.onrender.com/api/supabase-data');
         console.log(response.data);
         dispatch(setStudents(response.data)); // Store students in Redux
       } catch (error) {
@@ -33,7 +33,7 @@ const StudentTable = () => {
 
     try {
       setLoadingState(true);
-      const response = await axios.post('http://localhost:5000/api/add-student', {
+      const response = await axios.post('https://quyl-xepd.onrender.com/api/add-student', {
         studentName: newStudentName,
       });
       dispatch(addStudent(response.data)); // Add new student to Redux store
@@ -45,7 +45,6 @@ const StudentTable = () => {
       setLoadingState(false);
     }
   };
-
   const getCourseIcon = (courseName) => {
     if (courseName.includes('Science')) {
       return (
