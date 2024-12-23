@@ -1,0 +1,21 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model StudentData {
+  id          Int       @id @default(autoincrement())
+  studentName String    @map("Student_Name")
+  cohort      String?   @map("Cohort")
+  courses     String?   @map("Courses")
+  dateJoined  DateTime  @map("Date_Joined")
+  lastLogin   DateTime? @map("Last_Login")
+  status      Boolean   @map("Status")
+
+  @@map("StudentData")
+}
+
