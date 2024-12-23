@@ -12,7 +12,7 @@ const StudentTable = () => {
   const [loading, setLoadingState] = useState(false);
 
 
-  //console.log(`${process.env.BACKEND_Uri}/api/supabase-data`);
+  console.log(`${process.env.BACKEND_Uri}/api/supabase-data`);
   useEffect(() => {
     const fetchStudents = async () => {
       try {
