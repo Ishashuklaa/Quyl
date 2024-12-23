@@ -11,6 +11,8 @@ const StudentTable = () => {
   const [newStudentName, setNewStudentName] = useState('');
   const [loading, setLoadingState] = useState(false);
 
+
+  //console.log(`${process.env.BACKEND_Uri}/api/supabase-data`);
   useEffect(() => {
     const fetchStudents = async () => {
       try {
@@ -45,6 +47,7 @@ const StudentTable = () => {
       setLoadingState(false);
     }
   };
+
   const getCourseIcon = (courseName) => {
     if (courseName.includes('Science')) {
       return (
